@@ -4,7 +4,9 @@
 
 trigger:
 - main
-
+pool:
+  vmImage: ubuntu-latest
+  
 resources:
 - repo: self
 
@@ -12,13 +14,7 @@ variables:
   tag: '$(Build.BuildId)'
 
 stages:
-- stage: Build
-  displayName: Build image
-  jobs:
-  - job: Build
-    displayName: Build
-    pool:
-      vmImage: ubuntu-latest
+- stage: Build    
     steps:
     - task: Docker@2
       inputs:
