@@ -15,9 +15,9 @@ variables:
   tag: "$(Build.BuildId)"
 
 stages:
-- stage: build stage
+- stage: buildStage
   jobs:
-  - job: build job 
+  - job: buildJob 
     steps:
     - checkout: self  
 
